@@ -1,0 +1,38 @@
+Q0. Please answer the following questions in your own words.
+
+1. What makes a model "linear"? "Linear" in what?
+
+A model is linear when the independent variable(s) and the dependent variable has a straight-line relationship. 
+Linear models have a slope between variables remain consistent even if the input changes.
+A model is linear in the coefficients rather than the variable.   
+
+2. How do you interpret the coefficient for a dummy/one-hot-encoded variable? (This is a trick question, and the trick involves how you handle the intercept of the model.) There's further explanation at the end of this document, if needed.
+
+Coefficients for a dummy variable can't be interpreted when all categories (dummy variables) and intercept are included.
+This is because the model would have perfect multicollinearity meaning the variables are redundant.
+To avoid this and interpret the coefficient, a dummy variable must be dropped and becomes a refrence category. 
+The category is captured in the intercept.
+
+3. Can linear regression be used for classification? Explain why, or why not.
+
+Yes linear regression can be used for classification, but it's not the best idea because the model can predict values that are outside of the probability range.
+These models are meant to predict continuous values (like house prices), meaning the result could output any real number rather than just 1 or 0.
+Values output are continuous and don't output discrete labels. 
+
+4. If you have a high accuracy on testing but low on testing, what might be the problem? It also might be you see a pattern in the residuals.
+
+I assume the question is asking about high accuracy on training. 
+In this case the problem is overfitting, the model could be too complex for the amount of the data meaning the training set is being memorized. 
+If there is a pattern in the residuals (which is the difference between predicted and actual values) this is also a sig the data is too complex.    
+
+5. Review this page: Non-Linear with Linear What are two ways to incorporate nonlinear relationships between your target/response/dependent/outcome variable 
+and your features/control/response/independent variables ?
+
+Two ways to incorporate nonlinear relationships the target variable and the features is by using polynomial feature expansion and also use a kernel.
+Kernes create a higher-dimensional space and polynomial expansion creates features by raising features that exist to powers.
+
+6. What is the interpretation of the intercept? A slope coefficient for a variable? The coefficient for a dummy/one-hot-encoded variable?
+
+The intercept (B0) is the mean of Y when the predicters are equal to 0.
+The slope is the predicted change in the mean of Y for every unit increase in X.
+The coefficient for a dummy variable predicts is the avergae difference in Y between the group that the dummy variable represents and the reference group (when dummy is 0). 
